@@ -1,0 +1,23 @@
+@import "../post/post.scss";
+.double-post {
+    &__header {
+        font: $h-font;
+        font-size: $h3-size;
+        line-height: $h3-line-height;
+        color: $h-color;
+        text-align: center;
+        max-width: 430px;
+        margin: 0px auto 30px auto;
+    }
+    &__list {
+        display: flex;
+    }
+    &__item {
+        flex-grow: 1;
+        max-width: 539px;
+        width: 100%;
+        &+& {
+            margin-left: 30px;
+        }
+    }
+}

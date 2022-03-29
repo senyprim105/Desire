@@ -1,0 +1,28 @@
+include ../post/post.pug
+mixin double-post()
+    section.bouble-post&attributes(attributes)
+        .double-post__inner 
+            h3.double-post__header More inspiration ideas in our blog
+            .double-post__list 
+                .double-post__item
+                    +post()(
+                        data-img="/img/gallary/gallary-img-1.jpg",
+                        data-header="Listicle actually selvage activated charcoal for the drinking vinegar",
+                        data-date="March 12, 2020",
+                        data-author="by Ann Summers",
+                        data-authorUrl="/author/ann-summers",
+                        data-tag-captions="Inrerior",
+                        data-tag-urls="category/inrerior",
+                        data-img-class="small"
+                    )
+                .double-post__item
+                    +post()(
+                        data-img="/img/blog-2.jpg",
+                        data-header="Red selfies edison bulb four dollar toast humblebrag",
+                        data-date="September 28,2020",
+                        data-author="by Finnagan Morningstar",
+                        data-authorUrl="/author/finnagan-morningstar",
+                        data-tag-captions="Dining room interior",
+                        data-tag-urls="category/dining-room-interior",
+                        data-img-class="small"
+                    )

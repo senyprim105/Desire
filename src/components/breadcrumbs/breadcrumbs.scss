@@ -1,0 +1,27 @@
+.breadcrumbs {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font: $text-font;
+    font-size: 14px;
+    line-height: 28px;
+    color: $text-color;
+    &__inner {
+        background-color: rgba( #DFDFDF, 0.5);
+        padding: 14px 0;
+    }
+    &__item {
+        position: relative;
+        &+& {
+            padding-left: 9px;
+            &::before {
+                font: inherit;
+                content: "/";
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    }
+    &__link {}
+}

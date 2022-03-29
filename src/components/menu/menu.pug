@@ -1,0 +1,25 @@
+mixin menu(active)
+    -var activeMenuClass='menu__item--active'
+    include menu-data.pug
+    nav.menu&attributes(attributes)
+        ul.menu__list
+            each item in  menuList
+                -var classes = `menu__item menu__item--${item.name}`
+                -var activeClass = item.name==active?` ${activeMenuClass}`:""
+                li(class=classes+activeClass)
+                    a.menu__link(href=item.href) !{item.caption}
+        section.menu__right-side.menu__right-side--hide
+            .menu__right-side-inner 
+                button.menu__right-side-close 
+                img.menu__right-side-logo(src="/img/logo-big.png")
+                .menu__right-side-content 
+                    h2.menu__right-side-title Furniture for life
+                    p.menu__right-side-text Sustainable hot chicken skateboard, dreamcatcher meggings actually squid. Slow-carb everyday carry +1 art party microdosing, put a bird on it brooklyn
+                    img.menu__right-side-image(src="/img/content/img-right-side.jpg", alt="")
+        
+                    
+
+
+
+
+    

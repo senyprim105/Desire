@@ -1,0 +1,6 @@
+include ../collection-item/collection-item.pug
+mixin collection-list(list)
+    .collection-list&attributes(attributes)
+        each item in list 
+            +collectionItem(item)
+    

@@ -1,0 +1,17 @@
+mixin gallery(gallaryData, itemClass, pageClass)
+
+    .gallery&attributes(attributes)  
+        if gallaryData.filters 
+            .gallery__filter.container
+                .gallery__filter-list 
+                    each filter in gallaryData.filters
+                        button.gallery__filter-item(data-filter="."+filter.filter)= filter.caption
+        if gallaryData.pages 
+            .gallery__content
+                .gallery__content-list.container-fluid
+                    each page in gallaryData.pages
+                        .gallery__content-item.mix(class= page.filter+" "+pageClass)
+                            if page.images  
+                                each img in page.images
+                                    img(src= img.src, alt= img.alt class= itemClass)
+

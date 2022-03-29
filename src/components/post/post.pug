@@ -1,0 +1,72 @@
+mixin post(data={})
+    //- data {
+    //-   url:   {string},  - адрес поста 
+    //-   img:   {string},  - адрес картинки 
+    //-   slider:   [string], - адреса картинок
+    //-   video:   string, - адреса видео
+    //-   header:   {string}, - заголовок
+    //-   date:  {string}, - дата
+    //-   author: {string},  - автор
+    //-   authorUrl: {string},  - ссылка на автора
+    //-   text: {string}, - текст поста
+    //-   tags: [{caption: ,url:}] - список тегов
+
+    -
+        var dataPost = {};
+        var attributes = attributes || {};
+        dataPost.url=attributes["data-url"] || data.url || '';
+        dataPost.img=attributes["data-img"] || data.img || '';
+        dataPost.video=attributes["data-video"] || data.video || '';
+        var attributeSlider = (attributes["data-slider"] || '').split(',');
+        dataPost.slider=(attributeSlider.length > 0 ? attributeSlider : data.slider);
+        dataPost.header=attributes["data-header"] || data.header || '';
+        dataPost.date=attributes["data-date"] || data.date || '';
+        dataPost.author=attributes["data-author"] || data.author || '';
+        dataPost.authorUrl=attributes["data-authorUrl"] || data.authorUrl || '';
+        var attributeTagCaptions=(attributes["data-tag-captions"] || '').split(',');
+        var attributeTagUrls=(attributes["data-tag-urls"] || '').split(',');
+        dataPost.tags=[];
+        if (attributeTagCaptions.length === 0 || attributeTagCaptions.length!==attributeTagUrls.length){
+            dataPost.tags=data.tags;
+        } else{
+            for(var i=0; i<attributeTagCaptions.length;i++){
+                dataPost.tags.push({caption:attributeTagCaptions[i], url:attributeTagUrls[i] });
+            }
+        }
+
+        dataPost.text=attributes["data-text"] || data.text || '';
+        dataPost.class=attributes["class"] || data.class || '';
+        dataPost.imgClass=attributes["data-img-class"] || data.imgClass || '';
+        
+
+
+    
+    div(class="post "+dataPost.class) 
+        .post__inner
+            a.post__header-link(href= dataPost.url)
+                h4.post__header= dataPost.header 
+            if dataPost.img || dataPost.video || dataPost.slider
+                a.post__img-link(href= dataPost.url)
+                    if dataPost.img 
+                        img.post__img(src= dataPost.img class= ["post__img--"+dataPost.imgClass])
+                        if dataPost.video 
+                            a.post__video-link(href=dataPost.video data-fancybox)
+                    else if dataPost.slider 
+                        .post__slider
+                            .post__slider-inner
+                                each slide in dataPost.slider 
+                                    img.blog__slider-item(src=slide) 
+            
+
+
+            .post__params 
+                span.post__date= dataPost.date
+                if dataPost.date && dataPost.authorUrl
+                    span.post__spliter #{` | `} 
+                a.post__author(href= dataPost.authorUrl)= dataPost.author
+                if dataPost.authorUrl && dataPost.tags.length>0
+                    span.post__spliter #{` | `} 
+                a.post__category(href= dataPost.tags[0].url)= dataPost.tags[0].caption 
+            if block 
+                .post__content
+                    block

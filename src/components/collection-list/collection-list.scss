@@ -1,0 +1,5 @@
+@import "../collection-item/collection-item.scss";
+.collection-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}

@@ -1,0 +1,30 @@
+doctype html
+block page
+//- Mixins
+include ../header/header.pug
+include ../footer/footer.pug
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name='keywords' content=keywords)
+        meta(name='description' content= description)
+        title #{title}
+        include ../general-styles.pug
+        link(rel="stylesheet", href="css/library.css")
+        //- link(rel="stylesheet", href="css/library-"+pageName+".css")
+        link(rel="stylesheet", href="css/"+pageName+".css")
+    body.wrapper
+        +header(pageName)
+
+        main.main 
+            block main
+        +footer()
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        script(src="js/library.js")
+        //- script(src="js/library-"+pageName+".js")
+        script(src="js/"+pageName+".js")
+    

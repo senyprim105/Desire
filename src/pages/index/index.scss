@@ -1,0 +1,30 @@
+@import "../../components/layout/layout.scss";
+@import "../../components/slider/slider.scss";
+@import "../../components/new-collection/new-collection.scss";
+@import "../../components/aesthetic/aesthetic.scss";
+@import "../../components/how-it-work/how-it-work.scss";
+@import "../../components/gallery/gallery.scss";
+@import "../../components/double-post/double-post.scss";
+.main__slider {
+    margin-bottom: 133px;
+}
+
+.main__new-collection {
+    margin-bottom: 104px;
+}
+
+.main__aesthetic {
+    margin-bottom: 79px;
+}
+
+.main__how-it-work {
+    margin-bottom: 108px;
+}
+
+.main__gallery {
+    margin-bottom: 88px;
+}
+
+.main__double-post {
+    margin-bottom: 40px;
+}

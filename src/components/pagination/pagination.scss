@@ -1,0 +1,19 @@
+.pagination {
+    .pagination__inner {}
+    .pagination__arrow {
+        color:#000 &--prev {}
+        &--next {}
+    }
+    &__page {
+        font: inherit;
+        color: #707070;
+        &--current {
+            color: inherit;
+        }
+        &+&,
+        &+.pagination__arrow,
+        .pagination__arrow+& {
+            margin-left: 12px;
+        }
+    }
+}

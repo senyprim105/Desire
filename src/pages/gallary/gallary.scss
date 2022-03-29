@@ -1,0 +1,21 @@
+    @import "../../components/layout/layout.scss";
+    @import "../../components/breadcrumbs/breadcrumbs.scss";
+    @import "../../components/gallery/gallery.scss";
+    .gallery {
+        &__breadcrumbs {
+            margin-bottom: 83px;
+        }
+        &__item {
+            &:first-child {
+                grid-row: span 2;
+                grid-column: span 2;
+            }
+            &:nth-child(8) {
+                grid-row: span 2;
+                grid-column: span 2;
+            }
+        }
+        &__main {
+            margin-bottom: 150px;
+        }
+    }

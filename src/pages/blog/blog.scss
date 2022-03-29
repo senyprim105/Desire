@@ -1,0 +1,96 @@
+@import "../../components/layout/layout.scss";
+@import "../../components/breadcrumbs/breadcrumbs.scss";
+@import "../../components/post/post.scss";
+@import "../../components/aside-blog/aside-blog.scss";
+@import "../../components/pagination/pagination.scss";
+.blog {
+    display: flex;
+    justify-content: space-between;
+    &__posts {
+        max-width: 730px;
+        margin-right: 15px;
+        &:first-child {
+            margin-bottom: 70px;
+        }
+        &:nth-child(2) {
+            margin-bottom: 40px;
+        }
+    }
+    &__aside {
+        max-width: 350px;
+    }
+    &__breadcrumbs {
+        margin-bottom: 60px;
+    }
+    &__blockquote {
+        margin: 0;
+        display: block;
+        padding: 55px;
+        background: rgba(223, 223, 223, 0.5);
+        margin-bottom: 50px;
+    }
+    &__blockquote-text {
+        font: $text-font;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 24px;
+        line-height: 38px;
+        text-align: center;
+        position: relative;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            width: 200px;
+            height: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #6D7278;
+        }
+    }
+    &__blockquote-author {
+        display: block;
+        font: $h-font;
+        font-size: $h5-size;
+        line-height: $h5-line-height;
+        text-align: center;
+    }
+    &__slider {
+        position: relative;
+        margin-bottom: 50px;
+    }
+    &__video {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url(/img/icon-play.png);
+            background-repeat: no-repeat;
+        }
+    }
+    &__slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+        z-index: 1;
+        &--prev {
+            left: 16px;
+        }
+        &--next {
+            right: 16px;
+        }
+    }
+    &__pagination {
+        display: flex;
+        justify-content: center;
+    }
+}

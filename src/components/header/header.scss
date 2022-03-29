@@ -1,0 +1,7 @@
+@import "../menu/menu";
+.header {
+    &__menu {
+        padding: 45px 0px 45px 32px;
+        color: rgba($h-color, 0.9)
+    }
+}

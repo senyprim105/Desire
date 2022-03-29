@@ -1,0 +1,15 @@
+mixin pagination(currentPage,totalPage)
+    -var showPrev=currentPage>1
+    -var prev=currentPage-1
+    -var showNext=totalPage>currentPage
+    -var next=currentPage+1
+
+    section.pagination&attributes(attributes)
+        .pagination__inner 
+            if showPrev
+                a.pagination__arrow.pagination__arrow--prev(href="")="<"
+                a.pagination__page(href="")=prev 
+            span.pagination__page.pagination__page--current= currentPage 
+            if showNext
+                a.pagination__page(href="")=next
+                a.pagination__arrow.pagination__arrow--next(href="")=">"

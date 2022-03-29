@@ -1,0 +1,102 @@
+.new-collection {
+    &__title {
+        text-align: center;
+    }
+    &__header {
+        font: $h-font;
+        font-size: $h3-size;
+        line-height: $h3-line-height;
+        padding-bottom: 26px;
+        position: relative;
+        margin-bottom: 24px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 252px;
+            height: 1px;
+            background-color: #6d7278;
+            bottom: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__text {
+        max-width: 730px;
+        margin: 0px auto 30px;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    &__item {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        max-width: 350px;
+        object-fit: cover;
+        width: 100%;
+    }
+    &__item-img {
+        object-fit: cover;
+        width: 100%;
+    }
+    &__item-info {
+        position: absolute;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        background-color: rgba(#fff, 0.6);
+        opacity: 0;
+        transition: all 0.5s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__item-header {
+        font: $h-font;
+        font-size: 20px;
+        line-height: 24px;
+        color: $h-color;
+        padding-bottom: 20px;
+        position: relative;
+        margin-bottom: 20px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 1px;
+            background-color: #6d7278;
+            bottom: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__item-text {
+        color: #707070;
+    }
+}
+
+@media (max-width: 1866px) {
+    .new-collection__list {
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .new-collection__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .new-collection__list {
+        grid-gap: 20px;
+    }
+}

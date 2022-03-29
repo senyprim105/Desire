@@ -1,0 +1,11 @@
+//- block menu
+//- include ../menu/menu.pug
+//-     header.header 
+//-         .container
+//-             +menu(page)(class="header__menu")
+mixin header(page)
+    include ../menu/menu.pug
+    header.header&attributes(attributes)
+        .container 
+            +menu(page)(class="header__menu")
+      

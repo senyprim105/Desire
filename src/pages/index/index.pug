@@ -1,0 +1,27 @@
+extends ../../components/layout/layout.pug
+
+include ../../components/slider/slider.pug
+include ../../components/new-collection/new-collection.pug
+include ../../components/aesthetic/aesthetic.pug
+include ../../components/how-it-work/how-it-work.pug
+include ../../components/gallery/gallery.pug
+include ../../components/double-post/double-post.pug
+
+block page
+    - var pageName="index"
+    - var title = 'Sedona'
+    - var keywords = 'keyword1 keyword1 keyword1 keyword1 keyword1 keyword1 '
+    - var description = 'description'
+    - var style = "css/index.css"
+    - var library = "css/library.css"
+block main
+    +slider()(class="main__slider")
+    +new-collection()(class="main__new-collection container-fluid")
+    //- +aesthetic()(class="main__aesthetic")
+    //- +how-it-work()(class="main__how-it-work container")
+    //- include gallary-data.pug
+    //- +gallery(gallaryData)(class="main__gallery")
+    //- +double-post()(class="main__double-post container")
+        
+    
+

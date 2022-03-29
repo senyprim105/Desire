@@ -1,0 +1,6 @@
+include ../background-fluid/background-fluid.pug
+mixin about-us(text,background)
+    +background-fluid(background)&attributes(attributes)
+        h2.about-us= text
+            if block
+                block

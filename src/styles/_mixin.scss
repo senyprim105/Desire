@@ -1,0 +1,6 @@
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+    $k: calc(($f-max - $f-min)/($v-max - $v-min)); //Находим единицу размера шрифта на пиксель
+    $b: $f-min - $k * $v-min; //Находим минимальный размер 
+    $b: $b * 1px; //Приводим его к пикселям
+    @return calc( #{$k} * 100vw + #{$b});
+}

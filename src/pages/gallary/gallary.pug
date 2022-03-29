@@ -1,0 +1,18 @@
+extends ../../components/layout/layout.pug
+include ../../components/breadcrumbs/breadcrumbs.pug
+include ../../components/gallery/gallery.pug
+
+block page
+    - var pageName="gallary"
+    - var title = 'Desire'
+    - var keywords = 'keyword1 keyword1 keyword1 keyword1 keyword1 keyword1 '
+    - var description = 'description'
+    - var library = "css/library.css"
+    - var style = "css/gallary.css"
+block main
+    +breadcrumbs()(class="gallery__breadcrumbs")
+        +breadcrumbs-item('Home', '/')
+        +breadcrumbs-item('Gallery')
+    include gallary-data.pug
+    +gallery(gallaryData,"gallery__item", "gallery__page")(class="gallery__main")
+    

@@ -1,0 +1,19 @@
+const gulp = require("gulp");
+const clear = require("./src/gulp/tasks/clean");
+const styles = require("./src/gulp/tasks/style");
+const html = require("./src/gulp/tasks/html");
+const { minifyImage, copyMinifyImage } = require("./src/gulp/tasks/image");
+const script = require("./src/gulp/tasks/script");
+const library = require("./src/gulp/tasks/library");
+const serve = require("./src/gulp/tasks/serve");
+const build = require("./src/gulp/tasks/build");
+
+module.exports.clear = gulp.parallel(clear);
+module.exports.style = gulp.parallel(styles);
+module.exports.html = gulp.parallel(html);
+module.exports.image = gulp.series(minifyImage, copyMinifyImage);
+module.exports.script = gulp.parallel(script);
+module.exports.library = gulp.parallel(library);
+module.exports.serve = gulp.parallel(serve);
+module.exports.build = gulp.parallel(build);
+module.exports.default = gulp.series(build, serve);

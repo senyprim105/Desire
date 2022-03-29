@@ -1,0 +1,38 @@
+include ../post/post.pug
+include ../social-links/social-links.pug
+mixin aside-blog(categories, posts, tags)
+    //- categories - массив объектов категорий {href="",caption=""}
+    //- posts - массив объектов постов 
+    //- tags - массив объектов тегов 
+
+    aside.aside-blog 
+        form.aside-blog__search-form(action="" method="GET")
+            input.aside-blog__search-input(type="text" placeholder="Search")
+            button.aside-blog__search-submit(type="submit")
+        .aside-blog__categories 
+            h6.aside-blog__header.aside-blog__header--category Categories
+            if categories
+                ul.aside-blog__categories-list
+                    each category in categories
+                        li.aside-blog__categories-item
+                            a.aside-blog__categories-link(href= category.href)= category.category 
+                        
+        .aside-blog__recent-posts
+            h6.aside-blog__header.aside-blog__header--posts Recent Posts
+            if posts            
+                ul.aside-blog__recent-posts-list
+                    each post in posts
+                        li.aside-blog__recent-post
+                            +post(post)(class="post--small")
+        .aside-blog__tags
+            h6.aside-blog__header.aside-blog__header--tags Tags
+            if tags            
+                ul.aside-blog__tags-list
+                    each tag in tags
+                        li.aside-blog__tag
+                            a.aside-blog__tag-link(href=tag.href)= tag.tag
+        
+        +social-links("aside-blog__social-item")(class="aside-blog__social-links")                  
+
+
+

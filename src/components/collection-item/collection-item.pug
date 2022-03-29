@@ -1,0 +1,13 @@
+mixin collectionItem(item=undefined)
+    -var valid=(item!=null)
+
+    if (valid)
+        a.collection-item(href= item.href?item.href:"#")
+            if (item.src)
+                img.collection-item__img(src= item.src, alt= item.alt)
+                if (item.header || item.text) 
+                    .collection-item__info 
+                        if item.header
+                            h4.collection-item__header= item.header
+                        if item.text
+                            p.collection-item__text= item.text

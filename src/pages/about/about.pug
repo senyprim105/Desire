@@ -1,0 +1,28 @@
+extends ../../components/layout/layout.pug
+include ../../components/breadcrumbs/breadcrumbs.pug
+include ../../components/about-us/about-us.pug
+include ../../components/about-text-block/about-text-block.pug
+include ../../components/our-inspiration/our-inspiration.pug
+include ../../components/about-partners/about-partners.pug
+include ../../components/collection-list/collection-list.pug
+
+block page
+    - var pageName="about"
+    - var title = 'Desire'
+    - var keywords = 'keyword1 keyword1 keyword1 keyword1 keyword1 keyword1 '
+    - var description = 'description'
+    - var style = "css/about.css"
+    - var library = "css/library.css"
+block main
+    +about-us("About Us","/img/about-placeholder.jpg")(class="about__about-us")
+        +breadcrumbs()(class="about__breadcrumbs")
+            +breadcrumbs-item('Home', '/')
+            +breadcrumbs-item('About')
+    +about-text-block()(class="container about__text-block")
+    a.container-fluid.about__video(href="https://youtu.be/Nxg6UfofZX0" data-fancybox)
+        img(src="/img/video_post.jpg", alt="")
+    +our-inspiration()(class="about__our-inspiration")
+    +about-partners()(class="container-fluid about__about-partners")
+    include about-collection-data.pug
+    +collection-list(aboutCollectionData)(class="about__collection container-fluid")
+    

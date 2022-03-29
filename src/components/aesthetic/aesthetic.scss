@@ -1,0 +1,31 @@
+.aesthetic {
+    min-height: 618px;
+    background-image: url(/img/aesthetic.jpg);
+    background-repeat: no-repeat;
+    background-image: top center;
+    background-size: cover;
+    padding-top: 172px;
+    text-align: left;
+    &__header {
+        font: $h-font;
+        color: $h-color;
+        font-size: $h2-size;
+        line-height: $h2-line-height;
+        max-width: 730px;
+        position: relative;
+        padding-bottom: 23px;
+        margin-bottom: 21px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 1px;
+            background-color: #6D7278;
+            left: 0px;
+            bottom: 1px;
+        }
+    }
+    &__text {
+        max-width: 540px;
+    }
+}

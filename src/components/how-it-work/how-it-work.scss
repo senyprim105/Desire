@@ -1,0 +1,96 @@
+.how-it-work {
+    width: 100%;
+    &__inner {
+        text-align: center;
+    }
+    &__header {
+        font: $h-font;
+        font-size: $h3-size;
+        line-height: $h3-line-height;
+        color: $h-color;
+        margin-bottom: 39px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    &__item {
+        max-width: 50%;
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+        position: relative;
+        border-bottom: 2px solid rgba($h-color, 0.7);
+        &::before {
+            content: "";
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: left center;
+            top: 0px;
+            left: 0px;
+            width: 52px;
+            height: 42px;
+        }
+        &--designer {
+            &::before {
+                background-image: url("/img/graphic-tool.svg");
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -6px;
+                left: 0px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: $h-color;
+            }
+        }
+        &--production {
+            &::before {
+                background-image: url("/img/sofa.svg");
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                background-color: rgba($h-color, 0.7);
+                width: 2px;
+                height: 20px;
+            }
+        }
+        &--measurements {
+            padding-top: 30px;
+            width: 100%;
+            margin-left: 300px;
+            max-width: none;
+            border-bottom: none;
+            &::before {
+                top: 20px;
+                background-image: url("/img/рулетка.svg");
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                background-color: rgba($h-color, 0.7);
+                width: 2px;
+                height: 20px;
+            }
+        }
+    }
+    &__item-header {
+        font: $h-font;
+        font-size: $h5-size;
+        line-height: $h5-line-height;
+        color: $h-color;
+        margin-bottom: 39px;
+        padding-left: 52px;
+    }
+    &__item-text {
+        max-width: 268px;
+    }
+}

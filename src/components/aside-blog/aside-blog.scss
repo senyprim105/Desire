@@ -1,0 +1,81 @@
+.aside-blog {
+    &__search-form {
+        display: flex;
+        position: relative;
+        margin-bottom: 44px;
+    }
+    &__search-input {
+        font: $text-font;
+        color: $text-color;
+        width: 100%;
+        padding: 6px 40px 6px 18px;
+        border-radius: 20px;
+        color: $h-color;
+        &::placeholder {}
+    }
+    &__search-submit {
+        position: absolute;
+        right: 20px;
+        border: none;
+        align-self: center;
+        background-image: url(/img/icon-search.svg);
+        background-repeat: no-repeat;
+        width: 17px;
+        height: 17px;
+        background-size: cover;
+    }
+    &__categories {
+        margin-bottom: 47px;
+    }
+    &__header {
+        font: $h-font;
+        font-size: $h5-size;
+        line-height: $h5-line-height;
+        color: $h-color;
+        &--category {
+            margin-bottom: 15px;
+        }
+        &--posts {
+            margin-bottom: 24px;
+        }
+    }
+    &__categories-list {}
+    &__categories-item {
+        font: $text-font;
+        color: $text-color;
+        &+& {
+            margin-top: 11px;
+        }
+    }
+    &__categories-link {}
+    &__recent-posts {
+        margin-bottom: 50px;
+    }
+    &__tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+    }
+    &__tag {
+        margin-top: 12px;
+        margin-right: 12px;
+    }
+    &__tag-link {
+        font: $text-font;
+        font-weight: 600;
+        color: #8F8D8D;
+        padding: 5px 16px;
+        opacity: 0.5;
+        border: 1px solid #454647;
+        border-radius: 14px;
+    }
+    &__social-links {
+        display: flex;
+    }
+    &__social-item {
+        font-size: 0px;
+        &+& {
+            margin-left: 20px;
+        }
+    }
+}
