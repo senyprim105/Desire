@@ -1,3 +1,4 @@
+include ../header-text/header-text.pug
 mixin slider()
     .slider&attributes(attributes)
         .slider__inner
@@ -6,9 +7,11 @@ mixin slider()
                     .slider__slide-inner
                         .slider__slide-img-container
                             img.slider__slide-img(src="/img/content/image-first-page-slider-1.png")
-                        .slider__slide-content 
-                            h1.slider__slide-header Furniture collection
+                        +header-text("Furniture collection","slider__slide-header")(class="slider__slide-content")
                             p.slider__slide-text Deep v you probably haven't heard of them banh mi synth actually affogato. Aesthetic lyft ethical drinking vinegar austint
+                        //- .slider__slide-content 
+                        //-     h1.slider__slide-header Furniture collection
+                        //-     p.slider__slide-text Deep v you probably haven't heard of them banh mi synth actually affogato. Aesthetic lyft ethical drinking vinegar austint
                 .slider__slide.slider__slide-2 
                     .slider__slide-inner
                         .slider__slide-img-container

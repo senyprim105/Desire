@@ -1,0 +1,18 @@
+//- Задает структуру с заголовком и текстом ниже разделенные чертой
+//-align={left,right,center}
+mixin header-text(headerText,headerClass,align="left",h="h2")
+    .header-text&attributes(attributes)
+        #{h}.header-text__header(class=headerClass+" "+ "header-text__header--"+align) #{headerText}
+        .header-text__text(class="header-text__text--"+align)
+            block 
+mixin h2-text(headerText,headerClass,align="left")
+    +header-text(headerText,headerClass,align="left","h2")&attributes(attributes)
+        block
+
+mixin h3-text(headerText,headerClass,align="left")
+    +header-text(headerText,headerClass,align="left","h3")&attributes(attributes)
+        block 
+
+mixin h4-text(headerText,headerClass,align="left")
+    +header-text(headerText,headerClass,align="left","h4")&attributes(attributes)
+        block

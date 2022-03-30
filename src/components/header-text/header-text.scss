@@ -1,0 +1,48 @@
+.header-text {
+    &__header {
+        position: relative;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        @media (max-width: 575px) {
+            font-size: 25px;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 1px;
+            background-color: #979797;
+            bottom: 0px;
+            left: 0px;
+        }
+        &--center {
+            text-align: center;
+            &::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &--right {
+            text-align: right;
+            &::before {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #5a5a5a;
+        text-align: left;
+        &--right {
+            text-align: right;
+        }
+        &--center {
+            text-align: center;
+        }
+    }
+}

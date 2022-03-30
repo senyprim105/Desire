@@ -31,7 +31,7 @@ module.exports = function serve() {
 
     // Стили 
     watch([`${dir.src.pages}/**/*.scss`, `${dir.src.components}/**/*.scss`, `${dir.src.library}/**/*.scss`, `${dir.src.styles}/**/*.scss`], series(
-        compileSass,
+        compileSass,buildLibrary,
         reload
     ));
 
