@@ -4,6 +4,15 @@
 .contact {
     &__map {
         margin-top: -56px;
+        iframe {
+            min-height: 530px;
+            @media (max-width: 768px) {
+                min-height: 300px;
+            }
+            @media (max-width: 575px) {
+                min-height: 250px;
+            }
+        }
     }
     &__header {
         font: $h-font;
@@ -18,9 +27,13 @@
             position: absolute;
             width: 200px;
             height: 2px;
-            background-color: #6D7278;
+            background-color: #6d7278;
             bottom: 0px;
             left: 0px;
+        }
+        @media (max-width: 575px) {
+            font-size: $h4-size;
+            line-height: $h4-line-height;
         }
     }
     &__contact-us-content {
@@ -28,19 +41,32 @@
         font: $text-font;
         color: $text-color;
         margin-bottom: 100px;
+        @media (max-width: 1200px) {
+            margin-left: 0px;
+            margin-bottom: 80px;
+        }
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
+        @media (max-width: 575px) {
+            margin-bottom: 20px;
+        }
     }
     &__social-item {
         font-size: 0px;
-        &+& {
-            margin-left: 36px;
-        }
+        // &+& {
+        //     margin-left: 36px;
+        // }
     }
     &__social-links {
         display: flex;
+        width: 100%;
         margin-bottom: 20px;
+        max-width: 300px;
+        justify-content: space-between;
     }
     &__text {
-        color: #A1A1A1;
+        color: #a1a1a1;
         margin-bottom: 10px;
     }
     &__city {
@@ -60,24 +86,35 @@
     &__form {
         display: flex;
         flex-wrap: wrap;
+        @media (max-width: 575px) {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
     }
     &__input {
         padding: 6px 16px;
-        border: 1px solid #DFDFDF;
+        border: 1px solid #dfdfdf;
         border-radius: 20px;
         flex-grow: 1;
         &::placeholder {
             font: $text-font;
             line-height: 28px;
-            color: #A1A1A1;
+            color: #a1a1a1;
         }
-        &+& {
+        & + & {
             margin-left: 11px;
+        }
+        @media (max-width: 575px) {
+            & + & {
+                margin-left: 0px;
+                margin-top: 10px;
+            }
+            width: 100%;
         }
     }
     &__message {
         padding: 14px 16px;
-        border: 1px solid #DFDFDF;
+        border: 1px solid #dfdfdf;
         border-radius: 24px;
         margin-top: 15px;
         margin-bottom: 20px;
@@ -86,7 +123,7 @@
         &::placeholder {
             font: $text-font;
             line-height: 28px;
-            color: #A1A1A1;
+            color: #a1a1a1;
         }
     }
     &__submit {
@@ -95,12 +132,21 @@
         background: #363838;
         border-radius: 21px;
         font: $text-font;
-        color: #FFFFF0;
+        color: #fffff0;
         border: none;
         font-weight: 600;
+        @media (max-width: 575px) {
+            align-self: center;
+        }
     }
     &__slider {
         margin-bottom: 102px;
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
+        @media (max-width: 575px) {
+            margin-bottom: 20px;
+        }
     }
     &__slider-item {
         display: block;
@@ -134,7 +180,7 @@
             right: 0;
             bottom: 0;
             top: 0;
-            background: #FFFFFF;
+            background: #ffffff;
             opacity: 0.6;
         }
         .contact__slider-item-header {
@@ -148,7 +194,7 @@
         align-items: center;
         line-height: 0px;
         font-size: 0px;
-        li+li {
+        li + li {
             margin-left: 30px;
         }
         button {
@@ -160,7 +206,7 @@
             padding: 0;
         }
         .slick-active button {
-            background-color: #FFEF35;
+            background-color: #ffef35;
         }
     }
 }
