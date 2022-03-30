@@ -1,13 +1,18 @@
 .about-partners {
     max-height: 332px;
+
     &__list {
         display: flex;
         justify-content: space-between;
     }
     &__item {
         max-height: 100%;
+        max-width: 300px;
+        width:20%;
     }
     &__img {
         max-height: 100%;
+        width: 100%;
+        height: auto;
     }
 }

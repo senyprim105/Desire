@@ -13,6 +13,9 @@
         height: 506px;
         margin-left: -200px;
         margin-right: 78px;
+        @media (max-width:768px) {
+            display: none;            
+        }
     }
     &__information {
         max-width: 825px;
@@ -22,16 +25,9 @@
         font: $h-font;
         font-size: $h3-size;
         line-height: $h3-line-height;
-        position: relative;
-        padding-bottom: 16px;
-        margin-bottom: 23px;
-        &::before {
-            content: "";
-            position: absolute;
-            width: 200px;
-            height: 2px;
-            bottom: 0px;
-            background-color: #6D7278;
+        @media (max-width:575px) {
+            font-size: $h4-size;            
+            line-height: $h4-line-height;
         }
     }
     &__sub-header {
@@ -53,6 +49,9 @@
         padding-bottom: 14px;
         border-bottom: 2px solid #FFF;
         border-radius: 4px;
+    }
+    &__item-value{
+        padding-left: 20px;
     }
     &__line {
         border-bottom: 2px solid currentColor;

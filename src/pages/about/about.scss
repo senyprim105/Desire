@@ -1,46 +1,85 @@
 @import "../../components/layout/layout.scss";
+@import "../../components/header-text/header-text.scss";
 @import "../../components/breadcrumbs/breadcrumbs.scss";
 @import "../../components/about-us/about-us.scss";
 @import "../../components/about-text-block/about-text-block.scss";
 @import "../../components/our-inspiration/our-inspiration.scss";
 @import "../../components/about-partners/about-partners.scss";
 @import "../../components/collection-list/collection-list.scss";
-.about__about-us {
-    margin-bottom: 149px;
-}
+.about {
+    &__about-us {
+        margin-bottom: 149px;
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+        }
+    }
 
-.about__breadcrumbs {
-    position: absolute;
-    z-index: 1;
-    top: 0px;
-    width: 100%;
-}
-
-.about__video {
-    display: block;
-    max-height: 414px;
-    height: 100%;
-    margin-bottom: 98px;
-    img {
-        display: block;
-        object-fit: cover;
-        height: 100%;
+    &__breadcrumbs {
+        position: absolute;
+        z-index: 1;
+        top: 0px;
         width: 100%;
     }
-}
 
-.about__text-block {
-    margin-bottom: 40px;
-}
+    &__video {
+        display: block;
+        max-height: 414px;
+        height: 100%;
+        margin-bottom: 98px;
+        position: relative;
+        cursor: default;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: url(/img/play_button.svg) no-repeat center/contain;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            z-index: 2;
+            cursor: pointer;
+        }
+        
+        
+        img {
+            display: block;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+           
+        }
+        @media (max-width: 768px) {
+            max-height: 300px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 575px) {
+            max-height: 150px;
+            margin-bottom: 20px;
+        }
+    }
 
-.about__our-inspiration {
-    margin-bottom: 20px;
-}
+    &__text-block {
+        margin-bottom: 40px;
+    }
 
-.about__about-partners {
-    margin-bottom: 50px;
-}
+    &__our-inspiration {
+        margin-bottom: 20px;
+    }
 
-.about__collection {
-    margin-bottom: 72px;
+    &__about-partners {
+        margin-bottom: 50px;
+        @media (max-width: 575px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__collection {
+        margin-bottom: 72px;
+        @media (max-width: 575px) {
+            margin-bottom: 10px;
+        }
+    }
 }

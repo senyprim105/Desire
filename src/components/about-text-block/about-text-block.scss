@@ -3,24 +3,20 @@
         font: $h-font;
         font-size: $h3-size;
         line-height: $h3-line-height;
-        padding-bottom: 20px;
-        margin-bottom: 23px;
         max-width: 822px;
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            width: 200px;
-            height: 2px;
-            background-color: #6D7278;
-            bottom: 0px;
+        @media (max-width:575px) {
+            font-size: $h4-size;
+            line-height: $h4-line-height;            
         }
     }
     &__text {
         padding-left: 285px;
         font: $text-font;
-        p {
-            padding-bottom: 30px;
+        &+&{
+            padding-top: 30px;
+        }
+        @media (max-width:1200px) {
+            padding-left: 0;            
         }
     }
 }

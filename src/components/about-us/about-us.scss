@@ -7,4 +7,8 @@
     font-size: 60px;
     line-height: 80px;
     color: $h-color;
+    @media (max-width:575px) {
+        font-size: 25px;
+        padding: 20px 0px;        
+    }
 }

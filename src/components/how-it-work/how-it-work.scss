@@ -29,6 +29,7 @@
         text-align: left;
         position: relative;
         border-bottom: 2px solid rgba($h-color, 0.7);
+       
         &::before {
             content: "";
             position: absolute;
@@ -94,11 +95,21 @@
             max-width: 100%;      
             border: none;
             border-bottom: 2px solid rgba($h-color, 0.7);
+            padding-top: 0;
+            &+&{
+                margin-top: 20px;
+            }
+            &::before{
+                top: -10px;
+            }
+           
+           
             &::after{
                 content: none;
             }
             &--designer {
                 order: 1;
+
             }
             &--production {
                 order: 3;
@@ -117,6 +128,9 @@
         color: $h-color;
         margin-bottom: 39px;
         padding-left: 52px;
+        @media (max-width:768px) {
+            margin-bottom: 20px;
+        }
     }
     &__item-text {
         max-width: 268px;

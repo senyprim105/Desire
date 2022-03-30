@@ -8,24 +8,59 @@
 @import "../../components/double-post/double-post.scss";
 .main__slider {
     margin-bottom: 133px;
+    @media (max-width:768px) {
+        margin-bottom: 40px;
+    }
+    @media (max-width:575px) {
+        margin-bottom: 20px;
+    }
 }
 
 .main__new-collection {
     margin-bottom: 104px;
+    padding:0 15px;
+    @media (max-width:768px) {
+        margin-bottom: 40px;        
+    }
+    @media (max-width:575px) {
+        margin-bottom: 20px;
+    }
 }
 
 .main__aesthetic {
     margin-bottom: 79px;
+    @media (max-width:768px) {
+        margin-bottom: 40px;        
+    }
+    @media (max-width:575px) {
+        margin-bottom: 20px;
+    }
 }
 
 .main__how-it-work {
     margin-bottom: 108px;
+    @media (max-width:768px) {
+        margin-bottom: 40px;        
+    }
+    @media (max-width:575px) {
+        margin-bottom: 20px;
+    }
 }
 
 .main__gallery {
     margin-bottom: 88px;
+    @media (max-width:768px) {
+        margin-bottom: 40px;        
+    }
+    @media (max-width:575px) {
+        margin-bottom: 20px;
+    }
+
 }
 
 .main__double-post {
     margin-bottom: 40px;
+    @media (max-width:575px) {
+        margin-bottom: 20px;
+    }
 }
