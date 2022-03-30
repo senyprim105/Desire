@@ -4,6 +4,13 @@
     .gallery {
         &__breadcrumbs {
             margin-bottom: 83px;
+            @media (max-width:768px) {
+                margin-bottom: 40px;
+            }
+            @media (max-width:768px) {
+                margin-bottom: 20px;
+            }
+
         }
         &__item {
             &:first-child {
@@ -17,5 +24,11 @@
         }
         &__main {
             margin-bottom: 150px;
+            @media (max-width:768px) {
+                margin-bottom: 40px;
+            }
+            @media (max-width:768px) {
+                margin-bottom: 20px;
+            }
         }
     }
