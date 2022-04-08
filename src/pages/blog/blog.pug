@@ -27,24 +27,22 @@ block main
                 data-tag-urls="category/bedroom",
                 data-img-class="big",
                 data-text="Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table"
-            )
-                p Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table
+            )(class="blog__post")
                 blockquote.blog__blockquote
                     p.blog__blockquote-text “Simplicity is not the goal. It is the by-product of a good idea and modest expectations” 
                     cite.blog__blockquote-author Paul Rand
             +post()( 
-                
                 data-header="Authentic kogi shabby chic",
                 data-date="August 12, 2020",
                 data-author="by Lux Morningstar",
                 data-authorUrl="/author/lux-morningstar",
                 data-category="Design",
                 data-categoryUrl="category/design",
-                data-img-class="big"
-            )
-                //- Добавляем ссылку на видео
-                a.blog__video(href="https://youtu.be/Nxg6UfofZX0" data-fancybox)
-                    img(src="/img/blog-4.jpg", alt="")
+                data-img-class="big",
+                data-video="https://youtu.be/Nxg6UfofZX0",
+                 data-img="/img/blog-4.jpg",
+
+            )(class="blog__post")
             +post()(  
                 data-header="Semiotics fixie four dollar toast, next level woke",
                 data-date="August 18, 2020",
@@ -53,18 +51,12 @@ block main
                 data-category="Table Furniture",
                 data-categoryUrl="category/table-furniture",
                 data-img-class="big",
-                data-text="Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table"
-            )
-                a.blog__slider-link(href="#")
-                    .blog__slider
-                        .blog__slider-inner 
-                            img.blog__slider-item(src="/img/blog-1.jpg") 
-                            img.blog__slider-item(src="/img/blog-2.jpg") 
-                            img.blog__slider-item(src="/img/blog-3.jpg") 
+                data-text="Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table",
+                data-slider="/img/blog-1.jpg,/img/blog-2.jpg,/img/blog-3.jpg"
+            )(class="blog__post")
             +pagination(1,2)(class="blog__pagination container")
 
-
         include aside-data-blog.pug
-        +aside-blog(asideDataBlog.categories,asideDataBlog.posts,asideDataBlog.tags)(class="blog__aside")
+        +aside-blog(asideDataBlog.categories,asideDataBlog.posts,asideDataBlog.tags,asideDataBlog.class)(class="blog__aside")
 
     

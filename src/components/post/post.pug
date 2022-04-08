@@ -9,6 +9,7 @@ mixin post(data={})
     //-   author: {string},  - автор
     //-   authorUrl: {string},  - ссылка на автора
     //-   text: {string}, - текст поста
+    //-   textClass:{string},- class абзаца текста
     //-   tags: [{caption: ,url:}] - список тегов
 
     -
@@ -18,7 +19,7 @@ mixin post(data={})
         dataPost.img=attributes["data-img"] || data.img || '';
         dataPost.video=attributes["data-video"] || data.video || '';
         var attributeSlider = (attributes["data-slider"] || '').split(',');
-        dataPost.slider=(attributeSlider.length > 0 ? attributeSlider : data.slider);
+        dataPost.slider=(attributeSlider.length > 1 ? attributeSlider : "");
         dataPost.header=attributes["data-header"] || data.header || '';
         dataPost.date=attributes["data-date"] || data.date || '';
         dataPost.author=attributes["data-author"] || data.author || '';
@@ -35,8 +36,11 @@ mixin post(data={})
         }
 
         dataPost.text=attributes["data-text"] || data.text || '';
+        dataPost.multyText = Array.isArray(dataPost.text);
         dataPost.class=attributes["class"] || data.class || '';
+        dataPost.textClass=attributes["data-text-class"] || data.textClass || '';
         dataPost.imgClass=attributes["data-img-class"] || data.imgClass || '';
+
         
 
 
@@ -45,19 +49,18 @@ mixin post(data={})
         .post__inner
             a.post__header-link(href= dataPost.url)
                 h4.post__header= dataPost.header 
+            //-Если есть медиа контент создаем контейнер для него
             if dataPost.img || dataPost.video || dataPost.slider
-                a.post__img-link(href= dataPost.url)
-                    if dataPost.img 
+                .post__media
+                    if dataPost.img  
                         img.post__img(src= dataPost.img class= ["post__img--"+dataPost.imgClass])
-                        if dataPost.video 
-                            a.post__video-link(href=dataPost.video data-fancybox)
-                    else if dataPost.slider 
+                    if dataPost.video 
+                        a.post__video-link.video-link(href=dataPost.video data-fancybox)
+                    if dataPost.slider 
                         .post__slider
                             .post__slider-inner
                                 each slide in dataPost.slider 
-                                    img.blog__slider-item(src=slide) 
-            
-
+                                    img.post__slider-item(src=slide)
 
             .post__params 
                 span.post__date= dataPost.date
@@ -67,6 +70,11 @@ mixin post(data={})
                 if dataPost.authorUrl && dataPost.tags.length>0
                     span.post__spliter #{` | `} 
                 a.post__category(href= dataPost.tags[0].url)= dataPost.tags[0].caption 
-            if block 
-                .post__content
+            .post__content
+                if multyText 
+                    each text in dataPost.text 
+                        p.post__text=text
+                else 
+                    p.post__text=dataPost.text
+                if block
                     block

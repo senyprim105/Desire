@@ -74,3 +74,14 @@ img {
     height: auto;
     
 }
+.video-link{
+     position: absolute;
+     width: 80px;
+     height: 80px;
+     background: url(/img/play_button.svg) no-repeat center/contain;
+     left: 50%;
+     top:50%;
+     transform: translate(-50%,-50%);
+     z-index: 2;
+     cursor: pointer;
+    }

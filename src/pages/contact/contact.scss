@@ -120,6 +120,7 @@
         margin-bottom: 20px;
         width: 100%;
         min-height: 125px;
+        resize: none;
         &::placeholder {
             font: $text-font;
             line-height: 28px;

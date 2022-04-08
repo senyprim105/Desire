@@ -4,7 +4,7 @@
     font: 700 16px/22px "Montserrat", sans-serif;
     padding-left: 32px;
     &__list {
-        overflow-y: hidden;
+        
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -13,6 +13,7 @@
             justify-content: space-between;
         }
         @media (max-width: 575px) {
+            overflow-y: hidden;
             max-height: 38px;
             flex-wrap: wrap;
             justify-content: center;
@@ -21,6 +22,7 @@
             &--no-js,
             &--open {
                 max-height: 100vh;
+                padding-bottom: 10px;
             }
         }
     }
@@ -29,11 +31,11 @@
         width: 100%;
     }
     &__item {
+        position: relative;
         &:hover {
             opacity: 0.7;
             transition: opacity 0.3s;
         }
-        position: relative;
         &--index {
             order: 2;
             margin: 0 auto;

@@ -1,0 +1,28 @@
+mixin comment(data={})
+    //- data {
+    //-   author: {string},  - автор
+    //-   date:  {string}, - дата 
+    //-   dateFormat:{string}, - дата отображаемая
+    //-   text: [string], - текст коментария
+    //-   img:   {string},  - аватар 
+    //-   alt:    {string}, - описание картинки
+
+    -
+      var alt = data.alt==null? `Аватар пользователя ${data.author}`:data.alt;
+      var multiParagraph=Array.isArray(data.text);
+      
+    .comment
+        .comment__inner 
+            .comment__author 
+                .comment__author-avatar 
+                    img.comment__author-avatar-img(src=data.img alt=alt)
+                .comment__author__data
+                    .comment__author-name=data.author
+                    time.comment__author-date(datetime=data.date)=data.dateFormat
+            .comment__text-container
+                if multiParagraph
+                    each text in data.text
+                        p.comment__text=text
+                  
+                if  block  
+                    block 
