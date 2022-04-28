@@ -1,0 +1,9 @@
+mixin  post-list(slides)
+    //- [
+    //- {caption:Заголовок,url:url поста}   
+    //- ]
+    .post-list&attributes(attributes)
+        .post-list__inner 
+            each slide in slides 
+                a.post-list__slide(href=slide.url)=slide.caption 
+

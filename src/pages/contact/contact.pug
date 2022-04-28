@@ -2,6 +2,7 @@ extends ../../components/layout/layout.pug
 include ../../components/breadcrumbs/breadcrumbs.pug
 include ../../components/pagination/pagination.pug
 include ../../components/social-links/social-links.pug
+include ../../components/form/form.pug
 
 block page
     - var pageName="contact"
@@ -26,11 +27,17 @@ block main
                 .contact__street 725 Green St
                 .contact__city San Francisco, California(CA), 94133
                 a.contact__email(href="mailto:ouremailaddress@email.com") ouremailaddress@email.com
-                form.contact__form(action="about" method="POST") 
-                    input.contact__input(type="text" name="name" placeholder="Your name")
-                    input.contact__input(type="text" name="email" placeholder="Your e-mail")
-                    textarea.contact__message(name="message" placeholder="Your message")
-                    button.contact__submit Send
+                +form()(
+                    data-action="contact-us"
+                    data-method="POST"
+                    data-form-name="contact-us"
+                    data-button-caption="Send"
+                    data-remember-me-caption=""
+                    class="contact__form"
+                    data-message-placeholder="Your message"
+                    data-name-placeholder="Your name"
+                    data-email-placeholder="Your e-mail"
+                )
     include contact-collection-data.pug
     .contact__slider.container-fluid
         .contact__slider-inner 

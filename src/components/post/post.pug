@@ -15,6 +15,7 @@ mixin post(data={})
     -
         var dataPost = {};
         var attributes = attributes || {};
+        dataPost.mod = attributes["data-mod"] || data.mod||'';
         dataPost.url=attributes["data-url"] || data.url || '';
         dataPost.img=attributes["data-img"] || data.img || '';
         dataPost.video=attributes["data-video"] || data.video || '';
@@ -41,14 +42,12 @@ mixin post(data={})
         dataPost.textClass=attributes["data-text-class"] || data.textClass || '';
         dataPost.imgClass=attributes["data-img-class"] || data.imgClass || '';
 
-        
-
-
+        var modClass = dataPost.mod?"--single":"";
     
-    div(class="post "+dataPost.class) 
+    div(class="post"+ (modClass?" post" + modClass:"") + " "+dataPost.class) 
         .post__inner
             a.post__header-link(href= dataPost.url)
-                h4.post__header= dataPost.header 
+                h4.post__header(class=modClass?"post__header"+modClass:'')= dataPost.header 
             //-Если есть медиа контент создаем контейнер для него
             if dataPost.img || dataPost.video || dataPost.slider
                 .post__media
@@ -78,3 +77,12 @@ mixin post(data={})
                     p.post__text=dataPost.text
                 if block
                     block
+        if (modClass)
+            h6.post__tag-list-header Tags
+            ul.post__tag-list 
+                each tag in dataPost.tags 
+                 li.post__tag 
+                    a.post__tag-link(href=tag.url)=tag.caption
+
+                
+

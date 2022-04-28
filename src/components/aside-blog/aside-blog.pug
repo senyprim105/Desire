@@ -12,6 +12,7 @@ mixin aside-blog(categories, posts, tags,classes)
         .aside-blog__categories(class=classes.category)
             h6.aside-blog__header.aside-blog__header--category Categories
             if categories
+                .aside-blog__categories-container(class=classes["category-container"])
                 ul.aside-blog__categories-list(class=classes["category-list"])
                     each category in categories
                         li.aside-blog__categories-item

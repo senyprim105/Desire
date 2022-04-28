@@ -1,0 +1,38 @@
+mixin form(data={})
+            
+    //- data {
+    //-   action: {string},  - action
+    //-   name:  {string}, - name 
+    //-   method:{string}, - method
+    //-   buttonCaption: [string], - текст кнопки
+    //-   rememberMeCaption:   {string},  - Надпись на checkbox 
+    //-   rememberMeChecked:   {boolean}, - стоит ли галка по умолчанию
+
+    -
+        var options = {};
+        var attributes = attributes || {};
+        options.action = attributes["data-action"] || data.action||'';
+        options.method = attributes["data-method"] || data.method || '';
+        options.name = attributes["data-form-name"] || data.formName || '';
+        options.buttonCaption = attributes["data-button-caption"] || data.buttonCaption || '';
+        options.rememberMeCaption = attributes["data-remember-me-caption"] || data.rememberMeCaption || '';
+        options.rememberMeChecked = attributes["data-remember-me-checked"] || data.rememberMeChecked || '';
+        options.formClass = attributes["class"] || data.formClass || '';
+        
+        options.messagePlaceholder=attributes["data-message-placeholder"] || data.messagePlaceholder || '';
+        options.namePlaceholder=attributes["data-name-placeholder"] || data.namePlaceholder || '';
+        options.emailPlaceholder=attributes["data-email-placeholder"] || data.emailPlaceholder || '';
+
+        var rememberMeChecked = options.rememberMeChecked?"checked":"";
+
+
+    form.form(action=options.action name=options.name method=options.method class=options.formClass)
+        input.form__input(type="text" name="name" placeholder=options.namePlaceholder)
+        input.form__input(type="text" name="email" placeholder=options.emailPlaceholder)
+        textarea.form__message(name="message" placeholder=options.messagePlaceholder)
+        if options.rememberMeCaption 
+            .form__checkbox-inner
+                label.form__checkbox
+                    input.form__checkbox-element(type="checkbox" name="remember-me")
+                    span.form__checkbox-caption=options.rememberMeCaption
+        button.form__submit=options.buttonCaption

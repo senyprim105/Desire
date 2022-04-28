@@ -1,0 +1,51 @@
+.slick-active{
+    text-align: right;
+}
+.slick-current{
+    text-align: left;
+}
+.post-list {
+    width: 100%;
+
+    &__inner{
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        padding: 40px 33px 33px;
+        width: 100%;
+    }
+    
+    &__slide-container{
+        @media (max-width:575px) {
+            width: 100%;
+        }
+    }
+   
+    &__slide {
+        display: block;
+        max-width: 250px;
+        width: 100%;
+        @media (max-width:575px) {
+            max-width:none;  
+            text-align: center;          
+        }
+    }
+    &__arrow{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+        z-index: 1;
+        cursor: pointer;
+        &--prev {
+            left: 0px;
+        }
+        &--next {
+            right: 0px;
+        }
+    }
+
+   
+
+
+}

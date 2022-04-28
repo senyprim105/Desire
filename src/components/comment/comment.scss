@@ -1,0 +1,43 @@
+.comment {
+    &__inner {
+        width: 100%;
+    }
+    &__author {
+        padding-right: 50px;
+        display: flex;
+    }
+    &__author-avatar {
+        width: 64px;
+        border-radius: 50%;
+      
+    }
+    &__author-avatar-img {
+    }
+    &__author-data {
+        padding-left: 13px;
+    }
+    &__author-name {
+        font-weight: 700;
+        font-size: $h5-size;
+        line-height: $h5-line-height;
+        color: $h-color;
+    }
+    &__author-date {
+        font-size: $small-text-size;
+        line-height: $small-text-line-height;
+        color: $small-text-color;
+    }
+    &__text-container {
+        padding-left: 77px;
+        padding-right:40px;
+        @media (max-width:575px) {
+            padding-left: 0;            
+            padding-right: 0;
+        }
+
+    }
+    &__text {
+        font-family: $text-font;
+        color:$text-color;
+    }
+}

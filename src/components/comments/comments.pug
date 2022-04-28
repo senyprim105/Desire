@@ -1,0 +1,23 @@
+include ../comment/comment.pug
+include ../form/form.pug
+
+
+mixin comments(list=[])
+    .comments__inner 
+        h3.comments__header Comments:
+        .comments__list 
+            each item in list 
+                +comment(item)(class="comments__item")
+        h4.comments__form-header Post a Comment
+        +form()(
+            data-action="comment"
+            data-method="POST"
+            data-form-name="comment"
+            data-button-caption="Submit"
+            data-remember-me-caption="Remember Me"
+            data-message-placeholder="Your comment"
+            data-name-placeholder="Your name"
+            data-email-placeholder="Your e-mail"
+
+            class="comments__form"
+        )

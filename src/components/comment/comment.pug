@@ -11,18 +11,19 @@ mixin comment(data={})
       var alt = data.alt==null? `Аватар пользователя ${data.author}`:data.alt;
       var multiParagraph=Array.isArray(data.text);
       
-    .comment
+    .comment&attributes(attributes)
         .comment__inner 
             .comment__author 
                 .comment__author-avatar 
                     img.comment__author-avatar-img(src=data.img alt=alt)
-                .comment__author__data
+                .comment__author-data
                     .comment__author-name=data.author
                     time.comment__author-date(datetime=data.date)=data.dateFormat
             .comment__text-container
                 if multiParagraph
                     each text in data.text
                         p.comment__text=text
-                  
+                else 
+                    p.comment__text=data.text
                 if  block  
                     block 

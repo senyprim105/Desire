@@ -1,0 +1,28 @@
+@import "../../components/comment/comment.scss";
+@import "../../components/form/form.scss";
+
+.comments {
+    &__inner {
+        font-weight: 700;
+    }
+    &__header {
+        font-size: 20px;
+        line-height: 31px;
+
+        color: $h-color;
+        margin-bottom: 15px;
+    }
+    &__form-header {
+        font: $h-font;
+        color: $h-color;
+        margin-bottom: 25px;
+    }
+    &__item {
+        margin-bottom: 40px;
+    }
+    &__form .form__message {
+        order: -1;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}

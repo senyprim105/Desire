@@ -1,0 +1,67 @@
+extends ../../components/layout/layout.pug
+include ../../components/breadcrumbs/breadcrumbs.pug
+include ../../components/post/post.pug
+include ../../components/aside-blog/aside-blog.pug
+include ../../components/pagination/pagination.pug
+include ../../components/post-list/post-list.pug
+include ../../components/comments/comments.pug
+
+
+block page
+    - var pageName="single-post"
+    - var title = 'Desire'
+    - var keywords = 'single-post keyword1 keyword1 keyword1 keyword1 keyword1 '
+    - var description = 'description'
+    - var library = "css/library.css"
+    - var style = "css/post.css"
+block main
+    +breadcrumbs()(class="blog__breadcrumbs")
+        +breadcrumbs-item('Home', '/','Blog')
+        +breadcrumbs-item('Single Post')
+    section.single-post.container
+        .single-post__inner 
+            +post()(
+                data-mod="single"
+                data-img="/img/blog-3.jpg",
+                data-header="Red selfies edison bulb four dollar toast humblebrag for the furniture",
+                data-date="August 15, 2020",
+                data-author="by Ann Summers",
+                data-authorUrl="/author/ann-summers",
+                data-tag-captions="Bedroom Furniture,Office furniture,Dining room futniture,Chair",
+                data-tag-urls="category/bedroom,category/office,category/dining-room,category/chair",
+                data-img-class="big",
+                data-text="Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table"
+            )(class="single-post__post")
+                blockquote.single-post__blockquote
+                    p.single-post__blockquote-text “Simplicity is not the goal. It is the by-product of a good idea and modest expectations” 
+                    cite.single-post__blockquote-author Paul Rand
+                p.post__text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat repellat delectus natus incidunt aperiam quam facilis ratione. Et quae numquam a provident aspernatur nam aperiam ratione impedit. Quam nostrum, ab dolor dolore laboriosam reprehenderit. Maiores, error aliquid voluptas delectus eius magnam rem, illum accusamus, culpa esse minima. Distinctio necessitatibus deleniti animi esse odio magnam, id laboriosam quas iste expedita alias repellat! Iusto magnam delectus voluptatem eaque ullam nesciunt vero quam aliquam nulla laborum sint reprehenderit quos architecto maiores id accusamus, dolorem debitis mollitia placeat non sunt? Atque repellat magnam vero velit ullam, deserunt, adipisci, facilis culpa officia accusantium doloremque! Dolores.
+                p.post__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, laboriosam quisquam labore ipsam delectus rem libero quasi minima laudantium ipsum, id, odit saepe tempore suscipit eligendi repellat a. Magnam expedita eveniet consequatur eum corporis, dolore praesentium aut repellendus! Dolores culpa excepturi tempora similique atque nam illo quos dolorem beatae? Nemo?
+            +post-list([
+                {caption:"1 Cred selfies edison bulb four dollar toast humblebrag",url:"/blog/single-post/1"},
+                {caption:"2 Semiotics fixie four dollar toast, next level",url:"/blog/single-post/2"},
+                {caption:"3 Cred selfies edison bulb four dollar toast humblebrag",url:"/blog/single-post/1"},
+                {caption:"4 Semiotics fixie four dollar toast, next level",url:"/blog/single-post/2"},
+            ])(class="single-post__post-list")
+            +comments([
+                {
+                    author:"Lea Brown",
+                    date:"20200812",
+                    dateFormat:"August 12, 2020",
+                    text:["Tumeric tousled austin, kinfolk scenester authentic craft beer truffaut irony intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche","Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, autem corporis enim doloribus sequi eaque, ullam ab itaque quisquam vitae aut assumenda voluptas mollitia dolorem dicta praesentium molestiae est veniam vero voluptatum odit suscipit debitis reiciendis cupiditate? Eaque vero officia quaerat voluptas, consequuntur, totam iste ratione ipsum obcaecati suscipit ab."],
+                    img:"/img/users/avatar-1.jpg",
+                },
+                {
+                    author:"2 Lea Brown",
+                    date:"20200813",
+                    dateFormat:"August 13, 2020",
+                    text: "Tumeric tousled austin, kinfolk scenester authentic craft beer truffaut irony intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche", 
+                    img:"/img/users/avatar-1.jpg",
+                },
+            ])
+
+        include aside-data-blog.pug
+        +aside-blog(asideDataBlog.categories,asideDataBlog.posts,asideDataBlog.tags,asideDataBlog.class)(class="single-post__aside")
+    
+
+    
