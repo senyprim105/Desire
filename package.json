@@ -65,6 +65,7 @@
         "gulp-svgmin": "^3.0.0",
         "gulp-svgstore": "^7.0.1",
         "gulp-uglify": "3.0.2",
+        "gulp-webp": "4.0.1",
         "gulp.spritesmith": "^6.11.0",
         "jstransformer-markdown-it": "^2.0.0",
         "lint-staged": "^10.0.9",

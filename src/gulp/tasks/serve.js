@@ -5,7 +5,7 @@ const compilePugFast = require("./html");
 const compileSass = require("./style");
 const buildJs = require("./script");
 const buildLibrary = require("./library");
-const { minifyImage, copyMinifyImage } = require("./image");
+const { minifyImage, copyMinifyImage, createWebp } = require("./image");
 
 function reload(done) {
     browserSync.reload();
@@ -55,6 +55,6 @@ module.exports = function serve() {
 
     // Картинки
     watch([`${dir.src.img}/*.{jpg,jpeg,png,gif,svg,webp}`],
-        series(minifyImage, copyMinifyImage, reload)
+        series( parallel(minifySvg, createWebp), reload)
     );
 }

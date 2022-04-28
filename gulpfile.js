@@ -7,11 +7,13 @@ const script = require("./src/gulp/tasks/script");
 const library = require("./src/gulp/tasks/library");
 const serve = require("./src/gulp/tasks/serve");
 const build = require("./src/gulp/tasks/build");
+const minifySvg = require("./src/gulp/tasks/image");
+const createWebp = require("./src/gulp/tasks/image");
 
 module.exports.clear = gulp.parallel(clear);
 module.exports.style = gulp.parallel(styles);
 module.exports.html = gulp.parallel(html);
-module.exports.image = gulp.series(minifyImage, copyMinifyImage);
+module.exports.image = gulp.parallel(minifySvg, createWebp);
 module.exports.script = gulp.parallel(script);
 module.exports.library = gulp.parallel(library);
 module.exports.serve = gulp.parallel(serve);
